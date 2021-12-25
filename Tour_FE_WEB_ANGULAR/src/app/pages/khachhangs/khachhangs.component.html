@@ -1,0 +1,63 @@
+<p>khachhangs works!</p>
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true">
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Thông tin khách hàng"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="khTen"></dxi-item>
+        <dxi-item dataField="khSdt"></dxi-item>
+        <dxi-item dataField="khNgaysinh"></dxi-item>
+        <dxi-item dataField="khEmail"></dxi-item>
+        <dxi-item dataField="khCmnd"></dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+  <dxi-column
+    dataField="id"
+    dataType="number"
+    caption="Id">
+  </dxi-column>
+  <dxi-column
+    dataField="khTen"
+    dataType="string"
+    caption="Tên khách hàng">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+  <dxi-column
+    dataField="khSdt"
+    dataType="string"
+    caption="Số điện thoại">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+  <dxi-column
+    dataField="khNgaysinh"
+    dataType="date"
+    caption="Ngày sinh">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+  <dxi-column
+    dataField="khEmail"
+    dataType="string"
+    caption="email">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+    <dxi-validation-rule type="email"></dxi-validation-rule>
+  </dxi-column>
+  <dxi-column
+    dataField="khCmnd"
+    dataType="string"
+    caption="CMND">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+</dx-data-grid>

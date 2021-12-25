@@ -1,0 +1,11 @@
+.button{
+    -fx-min-height: 30;
+    -fx-end-margin: 30;
+    -fx-start-margin: 30;
+    -fx-margrin: 30;
+}
+.button-with-margin {
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}

@@ -1,0 +1,43 @@
+<h2> Xin chào mọi người</h2>
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true">
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Thông tin tour"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item caption="Tên loại" dataField="loaiTen"></dxi-item>
+        <dxi-item caption="Mô tả loại" dataField="loaiMota"></dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+  <dxi-column
+    dataField="id"
+    dataType="string"
+    caption="Id">
+  </dxi-column>
+  <dxi-column
+    dataField="loaiTen"
+    dataType="string"
+    caption="Tên loại">
+  </dxi-column>
+  <dxi-column
+    dataField="loaiMota"
+    dataType="string"
+    caption="Mô tả loại">
+  </dxi-column>
+  <!--id?: number;-->
+  <!--ten_loai: string;-->
+  <!--mota: string;-->
+</dx-data-grid>
+

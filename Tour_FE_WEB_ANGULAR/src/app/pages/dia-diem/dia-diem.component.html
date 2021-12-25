@@ -1,0 +1,48 @@
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true">
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Thông tin địa điểm"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="ddThanhpho"></dxi-item>
+        <dxi-item dataField="ddTen"></dxi-item>
+        <dxi-item dataField="ddMota"></dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+  <dxi-column
+    dataField="id"
+    dataType="number"
+    caption="Id">
+  </dxi-column>
+  <dxi-column
+    dataField="ddThanhpho"
+    dataType="string"
+    caption="Thành phố">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+  <dxi-column
+    dataField="ddTen"
+    dataType="string"
+    caption="Tên địa điểm">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+  <dxi-column
+    dataField="ddMota"
+    dataType="string"
+    caption="Mô tả">
+    <dxi-validation-rule type="required"></dxi-validation-rule>
+  </dxi-column>
+
+</dx-data-grid>

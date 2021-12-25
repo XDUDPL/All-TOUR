@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.6" prefHeight="741.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tourdulich.tourdulich.Controller.TourController">
+   <items>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ComboBox prefWidth="150.0" promptText="Tất cả">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <TextField>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="739.0" prefWidth="201.0">
+               <children>
+                  <TableView fx:id="table" layoutX="143.0" layoutY="160.0" onMouseClicked="#onTableClick" prefHeight="689.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" maxWidth="113.0" minWidth="-1.0" prefWidth="66.0" text="ID" />
+                      <TableColumn fx:id="tenColumn" maxWidth="294.0" minWidth="-1.0" prefWidth="185.0" text="Tên" />
+                        <TableColumn fx:id="motaColumn" maxWidth="539.0" minWidth="-1.0" prefWidth="325.0" text="Mô tả" />
+                        <TableColumn fx:id="loaiCollumn" maxWidth="539.0" minWidth="-1.0" prefWidth="173.0" text="Loại" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="739.0" prefWidth="424.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="5.0" prefHeight="739.0" prefWidth="499.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearForm" prefHeight="58.0" prefWidth="162.0" text="Làm mới" />
+                  <GridPane alignment="CENTER" hgap="10.0" prefHeight="278.0" prefWidth="499.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="100.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="390.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="241.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="268.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="ID" />
+                        <Label text="Tên" GridPane.rowIndex="1" />
+                        <Label text="Mô tả" GridPane.rowIndex="2" />
+                        <TextField fx:id="idTextField" editable="false" GridPane.columnIndex="1" />
+                        <TextField fx:id="tenTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="moTaTextFeild" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Loại" GridPane.rowIndex="3" />
+                        <ChoiceBox fx:id="loaiComboBox" onAction="#comboBoxOnAction" prefHeight="25.0" prefWidth="382.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="contentLoaiTour" prefHeight="127.0" prefWidth="387.0" text="Hii" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                        <Label text="Mô tả loại" GridPane.rowIndex="4" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="499.0">
+                     <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addEntity" text="Thêm">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateEntity" text="Sửa">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteEntity" text="Xoá" />
+                     </children>
+                  </HBox>
+                  <Label text="Label" />
+                  <HBox prefHeight="304.0" prefWidth="499.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="tableDiaDiem" editable="true" prefHeight="347.0" prefWidth="429.0">
+                          <columns>
+                              <TableColumn fx:id="ttColumn" prefWidth="130.0" text="Thứ tự" />
+                            <TableColumn fx:id="thanhPhoColumn" prefWidth="124.0" text="Thành phố" />
+                              <TableColumn fx:id="diaDiemColumn" prefWidth="156.0" text="Địa điểm" />
+                          </columns>
+                        </TableView>
+                        <VBox prefHeight="347.0" prefWidth="107.0" HBox.hgrow="NEVER">
+                           <children>
+                              <Button fx:id="addDiaDiemButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Thêm">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="25.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="orderUpbutton" mnemonicParsing="false" onAction="#orderUpAction" prefHeight="25.0" prefWidth="109.0" text="Đưa lên">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin></Button>
+                              <Button fx:id="orderDownButton" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#orderDownAction" prefHeight="25.0" prefWidth="109.0" text="Hạ xuống">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="deleteDiaDiemButton" layoutX="10.0" layoutY="105.0" mnemonicParsing="false" onAction="#deleteDiaDiemOnAction" prefHeight="25.0" prefWidth="109.0" text="Xoá">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="detailButton" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" onAction="#showDetail" prefHeight="25.0" prefWidth="109.0" text="Xem mô tả">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+   </items>
+</SplitPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tourdulich.tourdulich.Controller.AddTourChiTietDiaLog">
+   <children>
+      <Label text="Label">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin></Label>
+      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="684.0">
+         <children>
+            <Label text="Tìm kiếm" />
+            <TextField>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <TableView fx:id="table" prefHeight="470.0" prefWidth="684.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="84.0" text="ID" />
+          <TableColumn fx:id="tpColumn" prefWidth="123.0" text="Thành phố" />
+            <TableColumn fx:id="ddColumn" prefWidth="170.0" text="Tên địa điểm" />
+            <TableColumn fx:id="motaColumn" minWidth="6.0" prefWidth="306.0" text="Mô tả" />
+        </columns>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+</VBox>

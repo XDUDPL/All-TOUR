@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tourdulich.tourdulich.Controller.AddKhachHangContoller">
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <ComboBox prefWidth="150.0" promptText="Tất cả">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin></ComboBox>
+                <TextField fx:id="SearchText">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin></TextField>
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchAction" text="Tìm kiếm" />
+            </children>
+        </HBox>
+        <AnchorPane prefHeight="739.0" prefWidth="201.0">
+            <children>
+                <TableView fx:id="table" layoutX="143.0" layoutY="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="idColunm" maxWidth="46.0" minWidth="-1.0" prefWidth="46.0" text="ID" />
+                        <TableColumn fx:id="tenColunm" maxWidth="294.0" minWidth="-1.0" prefWidth="164.0" text="Tên" />
+                        <TableColumn fx:id="sdtColunm" maxWidth="414.0" minWidth="-1.0" prefWidth="204.0" text="Số điện thoại" />
+                        <TableColumn fx:id="ngaySinhColunm" maxWidth="520.0" minWidth="-1.0" prefWidth="106.0" text="Ngày sinh" />
+                        <TableColumn fx:id="emailColumn" maxWidth="666.0" minWidth="-1.0" prefWidth="124.0" text="Email" />
+                        <TableColumn fx:id="cmndColunm" maxWidth="675.0" prefWidth="105.0" text="CMND" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

@@ -1,0 +1,48 @@
+<dx-data-grid [dataSource]="chiPhiDataSource" [showBorders]="true" [columnAutoWidth]="true">
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Chi Phí"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="loaiChiPhiId"></dxi-item>
+        <dxi-item dataField="gia"></dxi-item>
+        <dxi-item  dataField="ghichu"> </dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+  <dxi-column
+    dataField="loaiChiPhiId"
+    dataType="number"
+    caption="Loại chi phí">
+    <dxo-lookup [dataSource]="loaichiphi" displayExpr="cpTen" valueExpr="id"></dxo-lookup>
+  </dxi-column>
+  <dxi-column
+    dataField="gia"
+    dataType="number"
+    format="currency"
+    caption="Giá trị">
+  </dxi-column>
+  <dxi-column
+    dataField="ghichu"
+    dataType="string"
+    caption="Ghi chú">
+  </dxi-column>
+  <dxo-summary>
+    <dxi-group-item
+      column="number"
+      summaryType="sum"
+      valueFormat="currency"
+      displayFormat="Tổng: {0}"
+    >
+    </dxi-group-item>
+  </dxo-summary>
+</dx-data-grid>
+

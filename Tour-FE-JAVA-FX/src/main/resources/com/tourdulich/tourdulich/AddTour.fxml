@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tourdulich.tourdulich.Controller.AddTourController">
+    <children>
+        <HBox fx:id="MainContent" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <ComboBox prefWidth="150.0" promptText="Tất cả">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </ComboBox>
+                <TextField fx:id="SearchText">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </TextField>
+                <Button mnemonicParsing="false" onAction="#onSearchAction" text="Button" />
+            </children>
+        </HBox>
+        <AnchorPane prefHeight="739.0" prefWidth="201.0">
+            <children>
+                <TableView fx:id="table" layoutX="143.0" layoutY="160.0" prefHeight="689.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="idColumn" maxWidth="113.0" minWidth="-1.0" prefWidth="66.0" text="ID" />
+                        <TableColumn fx:id="tenColumn" maxWidth="294.0" minWidth="-1.0" prefWidth="185.0" text="Tên" />
+                        <TableColumn fx:id="motaColumn" maxWidth="539.0" minWidth="-1.0" prefWidth="325.0" text="Mô tả" />
+                        <TableColumn fx:id="loaiCollumn" maxWidth="539.0" minWidth="-1.0" prefWidth="173.0" text="Loại" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

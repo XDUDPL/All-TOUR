@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tourdulich.tourdulich.Controller.HelloController">
+   <left>
+      <VBox prefHeight="743.0" prefWidth="102.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonAction" prefHeight="25.0" prefWidth="123.0" text="Trang Chủ" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="loaiTourButton" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" onAction="#loaiTourPage" prefHeight="25.0" prefWidth="123.0" text="Loại Tour">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="khachHangButton" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#KhachHangButton" prefHeight="25.0" prefWidth="123.0" text="Khách hàng">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></Button>
+            <Button fx:id="diaDiemButton" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#diaDiemOpenPage" prefHeight="25.0" prefWidth="123.0" text="Địa điểm">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></Button>
+            <Button fx:id="NhanVienButton" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#onNhanVienAction" prefHeight="25.0" prefWidth="109.0" text="Nhân Viên">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="loaiChiPhiButton" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#onLoaiChiPhiAtion" prefHeight="25.0" prefWidth="109.0" text="Loại Chi Phí">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="TourButton" mnemonicParsing="false" onAction="#onTourAction" prefHeight="25.0" prefWidth="109.0" text="Tour">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="DoanButton" layoutX="10.0" layoutY="230.0" mnemonicParsing="false" onAction="#onDoanAction" prefHeight="25.0" prefWidth="109.0" text="Đoàn" />
+            <Button fx:id="ThongKeButton" layoutX="10.0" layoutY="265.0" mnemonicParsing="false" onAction="#onThongKeAction" prefHeight="25.0" prefWidth="109.0" text="Thống Kê">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <SplitPane fx:id="HomePane" dividerPositions="0.8893" prefHeight="743.0" prefWidth="1257.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane>
+               <children>
+                  <Label layoutX="412.0" layoutY="329.0" prefHeight="83.0" prefWidth="290.0" text="Chào các bạn">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane />
+        </items>
+      </SplitPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="37.0" prefWidth="1360.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="TitleLabel" alignment="CENTER" prefHeight="53.0" prefWidth="496.0" text="Trang chủ">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

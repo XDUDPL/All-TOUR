@@ -1,0 +1,62 @@
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true">
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Thông tin nhân viên"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="nvTen"></dxi-item>
+        <dxi-item dataField="nvSdt"></dxi-item>
+        <dxi-item dataField="nvNgaysinh"></dxi-item>
+        <dxi-item dataField="nvEmail"></dxi-item>
+        <dxi-item dataField="nvNhiemvu"></dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+  <dxi-column
+    dataField="id"
+    dataType="number"
+    caption="Id">
+  </dxi-column>
+  <dxi-column
+    dataField="nvTen"
+    dataType="string"
+    caption="Tên nhân viên">
+    <!-- <dxi-validation-rule type="required"></dxi-validation-rule> -->
+  </dxi-column>
+  <dxi-column
+    dataField="nvSdt"
+    dataType="string"
+    caption="Số điện thoại">
+    <!-- <dxi-validation-rule type="required"></dxi-validation-rule> -->
+  </dxi-column>
+  <dxi-column
+    dataField="nvNgaysinh"
+    dataType="date"
+    caption="Ngày sinh">
+    <!-- <dxi-validation-rule type="required"></dxi-validation-rule> -->
+  </dxi-column>
+  <dxi-column
+    dataField="nvEmail"
+    dataType="string"
+    caption="Email">
+    <!-- <dxi-validation-rule type="required"></dxi-validation-rule>
+    <dxi-validation-rule type="email"></dxi-validation-rule> -->
+  </dxi-column>
+  <dxi-column
+    dataField="nvNhiemvu"
+    dataType="string"
+    caption="Nhiệm vụ">
+    <!-- <dxi-validation-rule type="required"></dxi-validation-rule> -->
+  </dxi-column>
+</dx-data-grid>

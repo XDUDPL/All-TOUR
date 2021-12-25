@@ -1,0 +1,21 @@
+.tab-pane > .tab-header-area > .headers-region > .tab{
+    -fx-background-radius: 20;
+    -fx-font-size: 24;
+    -fx-min-height: 60;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab:selected{
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+}
+.tab-pane > .tab-header-area{
+    -fx-min-height: 60;
+}
+.tab-pane > .tab-header-area > .headers-region{
+    -fx-min-height: 60;
+}
+.tab-pane {
+    -fx-tab-min-height:50px;
+    -fx-tab-max-height:50px;
+}
+.button{
+    -fx-end-margin: 50;
+}

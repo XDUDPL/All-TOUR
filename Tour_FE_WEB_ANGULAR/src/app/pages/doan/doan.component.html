@@ -1,0 +1,72 @@
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true"
+              [focusedRowEnabled]="true">
+  <dxo-paging [pageSize]="5"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="false" [showInfo]="false"></dxo-pager>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="false">
+    <dxo-popup
+      title="Thông tin Đoàn"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="tour.id"></dxi-item>
+        <dxi-item dataField="doanName"></dxi-item>
+        <dxi-item dataField="doanNgaydi"></dxi-item>
+        <dxi-item dataField="doanNgayve"></dxi-item>
+        <dxi-item dataField="doanChitietchuongtrinh"></dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+
+  <dxi-column
+    keyExpr="id"
+    dataField="id"
+    dataType="number"
+    caption="ID Đoàn">
+  </dxi-column>
+  <dxi-column
+    dataField="tour.id"
+    dataType="string"
+    caption="Tên tour">
+    <dxo-lookup [dataSource]="tour" displayExpr="tourTen" valueExpr="id"></dxo-lookup>
+  </dxi-column>
+  <dxi-column
+    dataField="doanName"
+    dataType="string"
+    caption="Tên đoàn">
+  </dxi-column>
+  <dxi-column
+    dataField="doanNgaydi"
+    dataType="Date"
+    caption="Đoàn ngày đi">
+  </dxi-column>
+  <dxi-column
+    dataField="doanNgayve"
+    dataType="Date"
+    caption="Đoàn ngày về">
+  </dxi-column>
+  <dxi-column
+    dataField="gia.giaSotien"
+    dataType="string"
+    caption="Giá">
+  </dxi-column>
+  <dxi-column
+    dataField="doanChitietchuongtrinh"
+    dataType="string"
+    caption="Chi tiết chương trình">
+  </dxi-column>
+  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+  <div *dxTemplate="let chiTiet of 'detail'">
+    <app-doan-detail [key]="chiTiet.key.id"></app-doan-detail>
+  </div>
+</dx-data-grid>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="741.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tourdulich.tourdulich.Controller.ThongKeController">
+   <children>
+      <TableView fx:id="table" prefHeight="741.0" prefWidth="1257.0">
+        <columns>
+          <TableColumn fx:id="IDColumn" prefWidth="92.0" text="ID" />
+          <TableColumn fx:id="doanNameColumn" prefWidth="119.0" text="Đoàn" />
+            <TableColumn fx:id="ngayDiColumn" prefWidth="134.0" text="Ngày đi" />
+            <TableColumn fx:id="ngayVeColumn" prefWidth="132.0" text="Ngày về" />
+            <TableColumn fx:id="chiColumn" prefWidth="138.0" text="Chi" />
+            <TableColumn fx:id="thuColumn" prefWidth="198.0" text="Thu" />
+            <TableColumn fx:id="loiNhuanColumn" prefWidth="198.0" text="Lợi nhuận" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

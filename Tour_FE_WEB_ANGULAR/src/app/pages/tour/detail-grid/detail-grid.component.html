@@ -1,0 +1,69 @@
+<p>Chi tiết tour</p>
+<dx-tabs
+  #apiTabs
+  [dataSource]="tab"
+  [selectedIndex]="0"
+  (onItemClick)="selectTab($event)"
+></dx-tabs>
+<ng-container *ngIf = "isDiaDiemShow" >
+
+  <dx-data-grid [dataSource]="tourChiTietDataSource" [showBorders]="true" [columnAutoWidth]="true">
+    <dxo-editing
+      mode="popup"
+      [allowUpdating]="true"
+      [allowAdding]="true"
+      [allowDeleting]="true">
+      <dxo-popup
+        title="Địa điểm"
+        [showTitle]="true"
+        [width]="700"
+        [height]="525">
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+          <dxi-item caption="Thành phố" dataField="dd.ddThanhpho"></dxi-item>
+          <dxi-item caption="Tên địa điểm" dataField="dd.ddTen"></dxi-item>
+          <dxi-item caption="Mô tả địa điểm" dataField="dd.ddMota"> </dxi-item>
+          <dxi-item caption="Thứ tự " dataField="ctThutu"> </dxi-item>
+        </dxi-item>
+      </dxo-form>
+    </dxo-editing>
+    <dxi-column caption="Tên thành phố " dataField="dd.ddThanhpho" dataType="string"></dxi-column>
+    <dxi-column caption="Tên địa điểm " dataField="dd.ddTen" dataType="string"></dxi-column>
+    <dxi-column caption=" Mô tả  " dataField="dd.ddMota" dataType="string"></dxi-column>
+    <dxi-column caption="Thứ tự " dataField="ctThutu" dataType="string"></dxi-column>
+  </dx-data-grid>
+
+</ng-container>
+
+<ng-container *ngIf = "!isDiaDiemShow" >
+
+  <dx-data-grid [dataSource]="giaDataSource" [showBorders]="true" [columnAutoWidth]="true">
+    <dxo-editing
+      mode="popup"
+      [allowUpdating]="true"
+      [allowAdding]="true"
+      [allowDeleting]="true">
+      <dxo-popup
+        title="giá tour"
+        [showTitle]="true"
+        [width]="700"
+        [height]="525">
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+
+          <dxi-item caption="giá số tiền" dataField="giaSotien"></dxi-item>
+          <dxi-item caption="giá từ ngày" dataField="giaTungay"> </dxi-item>
+          <dxi-item caption="ghi chú " dataField="ghichu"> </dxi-item>
+        </dxi-item>
+      </dxo-form>
+    </dxo-editing>
+
+    <dxi-column caption="giá" dataField="giaSotien" dataType="string"></dxi-column>
+    <dxi-column caption="từ ngày" dataField="giaTungay" dataType="string"></dxi-column>
+    <dxi-column caption="ghi chú " dataField="ghichu" dataType="string"></dxi-column>
+  </dx-data-grid>
+
+</ng-container>
+

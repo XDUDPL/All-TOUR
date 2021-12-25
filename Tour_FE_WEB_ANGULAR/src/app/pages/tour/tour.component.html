@@ -1,0 +1,64 @@
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true"
+              [focusedRowEnabled]="true"
+
+             >
+
+  <dxo-paging [pageSize]="5"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="false" [showInfo]="false"></dxo-pager>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Thông tin tour"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="tourTen"></dxi-item>
+        <dxi-item dataField="tourMota"></dxi-item>
+        <dxi-item  dataField="loai.id"> </dxi-item>
+      </dxi-item>
+    </dxo-form>
+  </dxo-editing>
+
+  <dxi-column
+    keyExpr="id"
+    dataField="id"
+    dataType="number"
+    caption="ID tour">
+  </dxi-column>
+  <dxi-column
+    dataField="tourTen"
+    dataType="string"
+    caption="Tên tour">
+  </dxi-column>
+  <dxi-column
+    dataField="tourMota"
+    dataType="string"
+    caption="mô tả tour">
+  </dxi-column>
+  <dxi-column
+    dataField="loai.id"
+    dataType="string"
+    caption="Tên Loại">
+    <dxo-lookup [dataSource]="LoaiTour" displayExpr="loaiTen" valueExpr="id"></dxo-lookup>
+  </dxi-column>
+  <dxi-column
+    dataField="loai.loaiMota"
+    dataType="string"
+    caption="mô tả loại">
+
+  </dxi-column>
+  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+  <div *dxTemplate="let chiTiet of 'detail'">
+    <detail-grid1 [key]="chiTiet.key.id"></detail-grid1>
+  </div>
+</dx-data-grid>
